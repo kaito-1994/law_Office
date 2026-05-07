@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>盛岡南法律事務所 — HP改善提案デモ</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --navy:#0f2240;
+  --navy-mid:#1a3660;
+  --gold:#b8924a;
+  --gold-light:#d4aa6a;
+  --cream:#f8f5ef;
+  --text:#1a1a1a;
+  --text-muted:#5a5a5a;
+  --white:#ffffff;
+}
+body{font-family:'Noto Sans JP',sans-serif;color:var(--text);background:var(--white);font-size:14px;line-height:1.7}
+.serif{font-family:'Noto Serif JP',serif}
+a{text-decoration:none}
+
+/* NOTICE BAR */
+.notice-bar{background:#c0392b;color:#fff;text-align:center;padding:10px 20px;font-size:13px;font-weight:700;letter-spacing:.05em}
+.notice-bar a{color:#ffd;text-decoration:underline}
+
+/* HEADER */
+header{background:var(--navy);padding:16px 40px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100}
+.logo-area{display:flex;flex-direction:column}
+.logo-ja{color:var(--white);font-size:16px;font-weight:700;font-family:'Noto Serif JP',serif;letter-spacing:.08em}
+.logo-en{color:var(--gold);font-size:10px;letter-spacing:.15em;margin-top:2px}
+nav{display:flex;gap:24px;align-items:center;flex-wrap:wrap}
+nav a{color:rgba(255,255,255,.8);text-decoration:none;font-size:13px;letter-spacing:.05em;transition:color .2s}
+nav a:hover{color:var(--gold-light)}
+.nav-cta{background:var(--gold);color:var(--navy)!important;padding:10px 20px;border-radius:4px;font-weight:700!important;font-size:13px!important}
+.nav-cta:hover{background:var(--gold-light)!important}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-mid) 60%,#243d6e 100%);padding:80px 40px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:0;right:0;width:45%;height:100%;background:rgba(26,54,96,.4);opacity:.6}
+.hero-inner{max-width:900px;margin:0 auto;position:relative;z-index:1}
+.hero-badge{display:inline-block;background:rgba(184,146,74,.2);border:1px solid var(--gold);color:var(--gold);font-size:11px;letter-spacing:.15em;padding:6px 16px;margin-bottom:24px}
+.hero h1{color:var(--white);font-size:36px;font-weight:600;line-height:1.4;margin-bottom:16px;font-family:'Noto Serif JP',serif}
+.hero h1 em{color:var(--gold-light);font-style:normal}
+.hero-sub{color:rgba(255,255,255,.75);font-size:15px;max-width:520px;line-height:1.8;margin-bottom:32px}
+.hero-ctas{display:flex;gap:16px;flex-wrap:wrap}
+.btn-primary{background:var(--gold);color:var(--navy);padding:16px 36px;font-size:15px;font-weight:700;border:none;cursor:pointer;letter-spacing:.05em;text-decoration:none;display:inline-block;border-radius:4px;transition:all .2s}
+.btn-primary:hover{background:var(--gold-light);transform:translateY(-1px)}
+.btn-outline{background:transparent;color:var(--white);padding:16px 32px;font-size:14px;font-weight:500;border:1px solid rgba(255,255,255,.5);cursor:pointer;letter-spacing:.05em;text-decoration:none;display:inline-block;border-radius:4px;transition:all .2s}
+.btn-outline:hover{border-color:var(--white);background:rgba(255,255,255,.08)}
+.hero-trust{margin-top:40px;display:flex;gap:32px;flex-wrap:wrap}
+.trust-item{display:flex;align-items:center;gap:8px;color:rgba(255,255,255,.65);font-size:12px}
+.trust-dot{width:6px;height:6px;background:var(--gold);border-radius:50%;flex-shrink:0}
+
+/* ANNOTATION */
+.annotation-strip{background:#fff3cd;border-left:4px solid #e67e22;padding:10px 20px;font-size:12px;color:#7d4e00;font-weight:600;letter-spacing:.04em}
+
+/* SECTION BASE */
+section{padding:64px 40px}
+.section-inner{max-width:900px;margin:0 auto}
+.section-label{font-size:11px;letter-spacing:.2em;color:var(--gold);font-weight:700;text-transform:uppercase;margin-bottom:12px}
+.section-title{font-size:26px;font-weight:600;font-family:'Noto Serif JP',serif;color:var(--navy);margin-bottom:40px;line-height:1.4}
+
+/* QUICK CTA STRIP */
+.quick-cta{background:var(--cream);border-top:3px solid var(--gold);padding:32px 40px}
+.quick-cta-inner{max-width:900px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.quick-cta-text h3{font-size:18px;font-family:'Noto Serif JP',serif;color:var(--navy);margin-bottom:4px}
+.quick-cta-text p{font-size:13px;color:var(--text-muted)}
+.quick-cta-actions{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.cta-phone{display:flex;flex-direction:column;align-items:center}
+.cta-phone-num{font-size:22px;font-weight:700;color:var(--navy);letter-spacing:.05em}
+.cta-phone-sub{font-size:11px;color:var(--text-muted)}
+.btn-sm{background:var(--gold);color:var(--navy);padding:12px 24px;font-size:13px;font-weight:700;border:none;cursor:pointer;border-radius:4px;text-decoration:none;display:inline-block}
+
+/* PRACTICE AREAS */
+.practice-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+.practice-card{background:var(--white);border:1px solid #e8e4dc;border-radius:6px;padding:20px;transition:all .25s;cursor:pointer;position:relative;overflow:hidden}
+.practice-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--gold);transform:scaleY(0);transition:transform .25s}
+.practice-card:hover{border-color:var(--gold);box-shadow:0 4px 20px rgba(0,0,0,.06)}
+.practice-card:hover::before{transform:scaleY(1)}
+.practice-name{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:6px}
+.practice-desc{font-size:12px;color:var(--text-muted);line-height:1.6}
+.practice-link{font-size:12px;color:var(--gold);margin-top:10px;display:inline-block;font-weight:600}
+
+/* PROFILE */
+.profile-section{background:var(--navy);padding:64px 40px}
+.profile-inner{max-width:900px;margin:0 auto;display:grid;grid-template-columns:280px 1fr;gap:48px;align-items:start}
+.profile-photo-placeholder{width:100%;aspect-ratio:3/4;background:linear-gradient(160deg,var(--navy-mid),#2a4d8a);border:1px solid rgba(184,146,74,.3);border-radius:4px;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.4);font-size:13px;letter-spacing:.1em}
+.profile-name-card{background:rgba(184,146,74,.1);border-left:3px solid var(--gold);padding:12px 16px;margin-top:16px}
+.profile-name-ja{color:var(--white);font-size:18px;font-family:'Noto Serif JP',serif;font-weight:600}
+.profile-name-en{color:var(--gold);font-size:11px;letter-spacing:.12em;margin-top:2px}
+.profile-content .section-label{color:var(--gold)}
+.profile-content .section-title{color:var(--white);margin-bottom:24px}
+.profile-body{color:rgba(255,255,255,.8);font-size:14px;line-height:1.9}
+.profile-career{margin-top:24px;display:flex;flex-direction:column;gap:10px}
+.career-item{display:flex;gap:16px;font-size:13px}
+.career-year{color:var(--gold);font-weight:700;flex-shrink:0;min-width:52px}
+.career-text{color:rgba(255,255,255,.75)}
+
+/* CONCERN SECTION */
+.concern-section{background:var(--cream);padding:64px 40px}
+.concerns{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-bottom:40px}
+.concern-item{background:var(--white);border-radius:6px;padding:20px;border-left:3px solid var(--navy);font-size:14px;color:var(--navy);font-weight:500;line-height:1.5}
+
+/* FLOW */
+.flow-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative}
+@media(max-width:640px){.flow-steps{grid-template-columns:1fr 1fr}}
+.flow-step{text-align:center;padding:24px 16px;position:relative}
+.flow-step::after{content:'→';position:absolute;right:-8px;top:40%;color:var(--gold);font-size:20px}
+.flow-step:last-child::after{display:none}
+.step-num{width:48px;height:48px;background:var(--navy);color:var(--white);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;margin:0 auto 12px;font-family:'Noto Serif JP',serif}
+.step-title{font-size:13px;font-weight:700;color:var(--navy);margin-bottom:6px}
+.step-desc{font-size:11px;color:var(--text-muted);line-height:1.6}
+
+/* FINAL CTA */
+.final-cta{background:var(--navy);text-align:center;padding:80px 40px}
+.final-cta h2{color:var(--white);font-size:28px;font-family:'Noto Serif JP',serif;margin-bottom:16px}
+.final-cta p{color:rgba(255,255,255,.7);font-size:14px;margin-bottom:40px;max-width:480px;margin-left:auto;margin-right:auto}
+.final-cta-box{background:rgba(255,255,255,.05);border:1px solid rgba(184,146,74,.3);border-radius:8px;padding:40px;max-width:480px;margin:0 auto}
+.contact-methods{display:flex;flex-direction:column;gap:16px}
+.contact-method{display:flex;align-items:center;gap:16px;padding:16px 20px;background:rgba(255,255,255,.06);border-radius:4px;text-decoration:none;color:var(--white);transition:background .2s}
+.contact-method:hover{background:rgba(255,255,255,.1)}
+.method-icon{font-size:20px;width:36px;text-align:center;flex-shrink:0}
+.method-text{text-align:left}
+.method-title{font-size:14px;font-weight:700}
+.method-sub{font-size:11px;color:rgba(255,255,255,.5);margin-top:2px}
+
+/* FOOTER */
+footer{background:#0a1a30;padding:24px 40px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.footer-info{color:rgba(255,255,255,.5);font-size:12px;line-height:1.8}
+.footer-nav{display:flex;gap:20px;flex-wrap:wrap}
+.footer-nav a{color:rgba(255,255,255,.4);font-size:12px;text-decoration:none}
+.footer-nav a:hover{color:rgba(255,255,255,.7)}
+
+/* DEMO BANNER */
+.demo-banner{background:var(--navy);border-bottom:3px solid var(--gold);padding:14px 40px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.demo-banner-text{color:var(--white);font-size:13px;font-weight:700;letter-spacing:.05em}
+.demo-banner-text span{color:var(--gold)}
+.demo-tags{display:flex;gap:8px;flex-wrap:wrap}
+.demo-tag{background:rgba(184,146,74,.15);border:1px solid rgba(184,146,74,.4);color:var(--gold);font-size:11px;padding:4px 10px;border-radius:20px;font-weight:600}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  header{padding:12px 20px;flex-wrap:wrap;gap:12px}
+  nav{gap:12px}
+  .hero{padding:48px 20px}
+  .hero h1{font-size:26px}
+  section{padding:48px 20px}
+  .concern-section,.profile-section,.quick-cta,.final-cta{padding:48px 20px}
+  .profile-inner{grid-template-columns:1fr}
+  .profile-photo-placeholder{aspect-ratio:4/3}
+  .quick-cta-inner{flex-direction:column;text-align:center}
+  footer{flex-direction:column;text-align:center;padding:24px 20px}
+}
+</style>
+</head>
+<body>
+
+<!-- DEMO BANNER -->
+<div class="demo-banner">
+  <div class="demo-banner-text">🔧 <span>改善提案デモ</span> — 盛岡南法律事務所 ホームページ</div>
+  <div class="demo-tags">
+    <span class="demo-tag">① 受任制限バー</span>
+    <span class="demo-tag">② ヒーローCTA</span>
+    <span class="demo-tag">③ 中間CTA</span>
+    <span class="demo-tag">④ 全業務に説明文</span>
+    <span class="demo-tag">⑤ 写真ファースト</span>
+    <span class="demo-tag">⑥ LINE導線</span>
+  </div>
+</div>
+
+<!-- ① 受任制限バー -->
+<div class="notice-bar">
+  ⚠️ 現在、一部分野において受任制限中です（2026年3月〜）。詳細は<a href="https://morioka-minami-law.com/news/exyq-_7p9c">こちら</a>をご確認ください。
+</div>
+<div class="annotation-strip">改善① ：受任制限を全ページ最上部に表示 — 現行サイトはお知らせページのみで、訪問者が気づかず問い合わせをしてしまうリスクがある</div>
+
+<!-- ② ヘッダーCTA追加 -->
+<header>
+  <div class="logo-area">
+    <span class="logo-ja">盛岡南法律事務所</span>
+    <span class="logo-en">MORIOKA MINAMI LAW OFFICE</span>
+  </div>
+  <nav>
+    <a href="https://morioka-minami-law.com/about">事務所案内</a>
+    <a href="https://morioka-minami-law.com/fee">弁護士費用</a>
+    <a href="https://morioka-minami-law.com/flow">相談の流れ</a>
+    <a href="https://morioka-minami-law.com/news">お知らせ</a>
+    <a href="https://morioka-minami-law.com/contact" class="nav-cta">無料相談予約</a>
+  </nav>
+</header>
+
+<!-- ② ヒーロー：CTA直置き -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">岩手県盛岡市の弁護士</div>
+    <h1 class="serif">一人で抱え込まないでください。<br><em>法律の専門家が、</em>あなたに伴走します。</h1>
+    <p class="hero-sub">相続・交通事故・借金・離婚・労働問題など、どんなお悩みでもまずご相談を。初回相談は丁寧にお話を伺います。</p>
+    <div class="hero-ctas">
+      <a href="https://morioka-minami-law.com/contact" class="btn-primary">📞 今すぐ相談する</a>
+      <a href="https://morioka-minami-law.com/flow" class="btn-outline">相談の流れを見る</a>
+    </div>
+    <div class="hero-trust">
+      <div class="trust-item"><span class="trust-dot"></span>仙北町駅 徒歩2分</div>
+      <div class="trust-item"><span class="trust-dot"></span>駐車場完備</div>
+      <div class="trust-item"><span class="trust-dot"></span>県内全域対応</div>
+      <div class="trust-item"><span class="trust-dot"></span>出張相談あり</div>
+    </div>
+  </div>
+</div>
+<div class="annotation-strip">改善② ：ヒーロー直下にCTA設置 — 現行サイトはスクロールしないと電話番号・フォームが見えない</div>
+
+<!-- 悩みフック -->
+<div class="concern-section">
+  <div class="section-inner">
+    <p class="section-label">こんなお悩みはありませんか</p>
+    <h2 class="section-title serif">法的トラブルは、一人で解決しようとしないでください。</h2>
+    <div class="concerns">
+      <div class="concern-item">遺産分割で家族と揉めていて、どうすればいいかわからない</div>
+      <div class="concern-item">交通事故に遭ったが、保険会社の提示額が妥当かわからない</div>
+      <div class="concern-item">借金の返済が苦しくて、毎月の生活が限界になっている</div>
+      <div class="concern-item">残業代を払ってもらえていないが、会社に言い出せずにいる</div>
+      <div class="concern-item">離婚を考えているが、子どもの親権や財産分与が心配</div>
+      <div class="concern-item">「弁護士に頼むとお金がかかりそう」で相談できずにいる</div>
+    </div>
+    <div style="text-align:center"><a href="https://morioka-minami-law.com/contact" class="btn-primary">まずは相談してみる →</a></div>
+  </div>
+</div>
+
+<!-- ③ 中間CTA -->
+<div class="quick-cta">
+  <div class="quick-cta-inner">
+    <div class="quick-cta-text">
+      <h3 class="serif">お悩みは一人で抱え込まず、まずご相談を。</h3>
+      <p>平日 9:00〜18:00 受付 ／ 仙北2丁目・駐車場完備</p>
+    </div>
+    <div class="quick-cta-actions">
+      <div class="cta-phone">
+        <span class="cta-phone-num">019-681-1831</span>
+        <span class="cta-phone-sub">電話受付：平日 9:00〜18:00</span>
+      </div>
+      <a href="https://morioka-minami-law.com/contact" class="btn-sm">メールで相談</a>
+    </div>
+  </div>
+</div>
+<div class="annotation-strip">改善③ ：スクロール中間にCTAストリップを設置 — 長いページで離脱させないための保険</div>
+
+<!-- ④ 取扱業務：全分野に説明文 -->
+<section>
+  <div class="section-inner">
+    <p class="section-label">取扱業務</p>
+    <h2 class="section-title serif">幅広い法的問題に対応します</h2>
+    <div class="practice-grid">
+      <div class="practice-card">
+        <div class="practice-name">遺産相続・相続放棄</div>
+        <p class="practice-desc">遺産分割協議から遺留分請求、相続放棄まで。生前対策（遺言書作成）もご相談いただけます。</p>
+        <span class="practice-link">詳しく見る →</span>
+      </div>
+      <div class="practice-card">
+        <div class="practice-name">交通事故・後遺障害</div>
+        <p class="practice-desc">保険会社との示談交渉、後遺障害等級認定のサポート。豊富な実務経験を活かします。</p>
+        <span class="practice-link">詳しく見る →</span>
+      </div>
+      <div class="practice-card">
+        <div class="practice-name">借金・債務整理</div>
+        <p class="practice-desc">任意整理・個人再生・自己破産など、状況に応じた最善の方法を一緒に考えます。</p>
+        <span class="practice-link">詳しく見る →</span>
+      </div>
+      <div class="practice-card">
+        <div class="practice-name">離婚・男女トラブル</div>
+        <p class="practice-desc">協議離婚から調停・裁判まで対応。親権・養育費・財産分与・不貞慰謝料のご相談も。</p>
+        <span class="practice-link">詳しく見る →</span>
+      </div>
+      <div class="practice-card">
+        <div class="practice-name">労働問題・労災</div>
+        <p class="practice-desc">未払い残業代の請求、不当解雇への対応、ハラスメント被害など、労働者の権利を守ります。</p>
+        <span class="practice-link">詳しく見る →</span>
+      </div>
+      <div class="practice-card">
+        <div class="practice-name">刑事事件</div>
+        <p class="practice-desc">逮捕直後の初動対応から、不起訴・執行猶予を目指した弁護活動まで迅速に対応します。</p>
+        <span class="practice-link">詳しく見る →</span>
+      </div>
+      <div class="practice-card">
+        <div class="practice-name">中小企業法務・顧問</div>
+        <p class="practice-desc">契約書チェック、トラブル予防、労務管理まで。地域の中小企業を法律面から支援します。</p>
+        <span class="practice-link">詳しく見る →</span>
+      </div>
+      <div class="practice-card">
+        <div class="practice-name">債権回収・損害賠償</div>
+        <p class="practice-desc">売掛金の回収、損害賠償請求などの金銭トラブルに対応。証拠保全のご相談もどうぞ。</p>
+        <span class="practice-link">詳しく見る →</span>
+      </div>
+      <div class="practice-card">
+        <div class="practice-name">ネット削除・開示請求</div>
+        <p class="practice-desc">SNS・掲示板への誹謗中傷の削除申請、発信者情報開示請求、損害賠償請求に対応します。</p>
+        <span class="practice-link">詳しく見る →</span>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="annotation-strip">改善④ ：全9業務に説明文を追加 — 現行は3分野のみ本文あり。「盛岡 離婚 弁護士」などの検索流入を獲得できていない</div>
+
+<!-- ⑤ 代表：写真ファースト -->
+<div class="profile-section">
+  <div class="profile-inner">
+    <div>
+      <div class="profile-photo-placeholder">代表写真</div>
+      <div class="profile-name-card">
+        <div class="profile-name-ja">高橋 海渡</div>
+        <div class="profile-name-en">KAITO TAKAHASHI, Attorney at Law</div>
+      </div>
+    </div>
+    <div class="profile-content">
+      <p class="section-label">代表弁護士</p>
+      <h2 class="section-title serif">複雑な法律を分かりやすく伝え、<br>あなたの権利を守ります。</h2>
+      <p class="profile-body">盛岡市出身。大学在学中に「法律とは、私たちの権利を守るためのルール」であると確信し弁護士を目指しました。仙台・宇都宮・水戸・東京での実務経験を経て、2022年7月に故郷・岩手で独立開業。交通事故分野では特に豊富な実績を持ちます。</p>
+      <div class="profile-career">
+        <div class="career-item">
+          <span class="career-year">2022年</span>
+          <span class="career-text">盛岡南法律事務所 開設・代表弁護士就任</span>
+        </div>
+        <div class="career-item">
+          <span class="career-year">〜2022年</span>
+          <span class="career-text">弁護士法人宇都宮東法律事務所（交通事故注力・栃木県内有数規模）</span>
+        </div>
+        <div class="career-item">
+          <span class="career-year">出身</span>
+          <span class="career-text">盛岡市生まれ / 法学部卒</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="annotation-strip">改善⑤ ：写真→名前→経歴の順に変更 — 現行サイトは写真が文章の末尾。弁護士サービスは「人への信頼」が起点なので顔を先に出す</div>
+
+<!-- 相談の流れ -->
+<section style="background:var(--cream)">
+  <div class="section-inner">
+    <p class="section-label">ご相談の流れ</p>
+    <h2 class="section-title serif">はじめての方も安心して相談できます</h2>
+    <div class="flow-steps">
+      <div class="flow-step">
+        <div class="step-num">1</div>
+        <div class="step-title">お電話・フォームで予約</div>
+        <div class="step-desc">平日9〜18時受付。日時を決めましょう</div>
+      </div>
+      <div class="flow-step">
+        <div class="step-num">2</div>
+        <div class="step-title">初回ご相談</div>
+        <div class="step-desc">事務所・電話・オンラインで対応</div>
+      </div>
+      <div class="flow-step">
+        <div class="step-num">3</div>
+        <div class="step-title">方針・費用のご説明</div>
+        <div class="step-desc">解決の見通しと費用をわかりやすく説明</div>
+      </div>
+      <div class="flow-step">
+        <div class="step-num">4</div>
+        <div class="step-title">ご依頼・解決へ</div>
+        <div class="step-desc">納得いただいてから正式なご依頼</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ⑥ 最終CTA：LINE追加 -->
+<div class="final-cta">
+  <h2 class="serif">まずは、お気軽にご連絡ください。</h2>
+  <p>「相談するほどのことか？」と思わずに、小さなお悩みもお話しください。</p>
+  <div class="final-cta-box">
+    <div class="contact-methods">
+      <a href="tel:019-681-1831" class="contact-method">
+        <span class="method-icon">📞</span>
+        <div class="method-text">
+          <div class="method-title">019-681-1831</div>
+          <div class="method-sub">平日 9:00〜18:00 受付</div>
+        </div>
+      </a>
+      <a href="https://morioka-minami-law.com/contact" class="contact-method">
+        <span class="method-icon">✉️</span>
+        <div class="method-text">
+          <div class="method-title">お問い合わせフォーム</div>
+          <div class="method-sub">24時間受付</div>
+        </div>
+      </a>
+      <a href="#" class="contact-method" style="border:1px solid rgba(0,200,100,.3)">
+        <span class="method-icon">💬</span>
+        <div class="method-text">
+          <div class="method-title" style="color:#4cd96a">LINE で相談（追加提案）</div>
+          <div class="method-sub">気軽にテキストで相談できます</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+<div class="annotation-strip">改善⑥ ：LINE公式アカウント導線を追加 — 電話しにくい層のハードルを下げる。実装するかは要検討</div>
+
+<footer>
+  <div class="footer-info">
+    〒020-0861 岩手県盛岡市仙北2丁目12-39 日本家電ビル202<br>
+    盛岡南法律事務所 ／ 弁護士 高橋海渡 ／ TEL: 019-681-1831
+  </div>
+  <div class="footer-nav">
+    <a href="https://morioka-minami-law.com/">ホーム</a>
+    <a href="https://morioka-minami-law.com/about">事務所案内</a>
+    <a href="https://morioka-minami-law.com/fee">弁護士費用</a>
+    <a href="https://morioka-minami-law.com/contact">お問い合わせ</a>
+  </div>
+</footer>
+
+</body>
+</html>
